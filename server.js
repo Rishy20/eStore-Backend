@@ -4,6 +4,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 //Import the routes
 const sellerRoutes = require('./routes/seller.routes');
+const productRoutes = require('./routes/product.routes');
 
 //Import cors
 const cors = require('@koa/cors');
@@ -20,6 +21,8 @@ app.use(cors());
 
 //Registering the Seller routes
 app.use(sellerRoutes.routes()).use(sellerRoutes.allowedMethods());
+//Registering the Product routes
+app.use(productRoutes.routes()).use(productRoutes.allowedMethods());
 
 
 
